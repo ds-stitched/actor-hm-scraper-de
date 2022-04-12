@@ -37,11 +37,12 @@ function checkAndCreateUrlSource(startUrls) {
     const subcats = [
         '/products', '/new-arrivals', '/deals', '/seasonal-trending',
         '/campaigns/', '/concepts', '/selected/', '/shop-by-room', '/sale/',
+	'/produkte/'  // For German hm
     ];
 
     for (const { url } of startUrls) {
         // if url is the homepage
-        if (url === 'https://www2.hm.com/en_us/index.html') {
+        if (url === 'https://www2.hm.com/de_de/index.html') {
             sources.push({ url, userData: { label: 'HOMEPAGE' } });
             log.info(`HOMEPAGE: ${url}`);
         } else if (url.includes('productpage') || /[0-9]{8,12}/.test(url)) {
