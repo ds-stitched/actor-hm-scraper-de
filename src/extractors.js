@@ -123,6 +123,7 @@ async function extractProductPage($, request, proxyUrls, category = null) {
     item.sizes = product.sizes.map((size) => size.name).filter((name) => name !== '');
     item.availableSizes = product.sizes.filter((size) => availability.includes(size.sizeCode)).map((size) => size.name);
     item.images = product.images.map((o) => { return { url: `https:${o.image}` }; });
+    item.reviews = product.reviews.map((review) => review.content).filter((content) => content !== '');
 
     return item;
 }
